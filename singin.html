@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign UP</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .contact-details, .contact-form {
+      margin: 20px 0;
+    }
+    .contact-details ul {
+      list-style: none;
+      padding: 0;
+    }
+    .contact-details li {
+      margin: 10px 0;
+      font-size: 16px;
+    }
+    .contact-details a {
+      color: #4CAF50;
+      text-decoration: none;
+    }
+    .contact-form input, .contact-form textarea, .contact-form button {
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    .contact-form button {
+      background: #4CAF50;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    .contact-form button:hover {
+      background: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Sign UP</h1>
+    <div>
+      <p id="date-time" class="text-end text-muted"></p>
+    </div>
+    <nav>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="courses.html">Courses</a>
+        <a href="resources.html">Resources</a>
+        <a href="success.html">Success</a>
+      </div>
+    </nav>
+  </header>
+
+  <section>
+    <form class="contact-form" onsubmit="validateForm()">
+      <h2>Sign UP</h2>
+
+      <label for="Fullname">Name</label>
+      <br>
+      <input type="text" id="Fullname" name="Fullname" placeholder="Enter your name">
+      <span id="Fullname-error" style="color: red;"></span> <span id="fullnametrue" style="color: green;"></span>
+      <br>
+
+      <label for="age">Age:</label>
+      <br>
+      <input type="number" id="age" name="age" placeholder="Enter your age" required>
+      <span id="age-error" style="color: red;"></span>
+      <br><br>
+
+      <div>
+        <label>Gender:</label><br><br>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label>
+      </div>
+      <span id="gender-error" style="color: red;"></span>
+      <br><br>
+
+      <div id="check1">
+        <label for="goals">Learning Goals:</label>
+        <br><br>
+        <input type="checkbox" id="goal1" name="goals" value="Learn Python">
+        <label for="goal1">Learn Python</label>
+        <br>
+
+        <input type="checkbox" id="goal2" name="goals" value="Learn C++">
+        <label for="goal2">Learn C++</label>
+        <br>
+
+        <input type="checkbox" id="goal3" name="goals" value="Learn Java">
+        <label for="goal3">Learn Java</label>
+        <br>
+
+        <input type="checkbox" id="goal4" name="goals" value="Learn HTML">
+        <label for="goal4">Learn HTML</label>
+        <br><br>
+
+        <span id="goalsError" style="color: red;"></span>
+      </div>
+
+      <label for="email">Email:</label>
+      <br>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      <br><br>
+
+      <label for="password">Password:</label>
+      <br>
+      <input type="password" id="password" name="password" placeholder="Enter your password" required>
+      <span id="password-error" style="color: red;"></span>
+      <br>
+
+      <label for="confirm-password">Confirm Password:</label>
+      <br>
+      <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+      <span id="confirm-password-error" style="color: red;"></span>
+      <br><br>
+
+      <button type="submit">Sign In</button>
+    </form>
+  </section>
+
+  <footer>
+    <p><a href="singin.html" target="_blank">Sign In</a></p>
+    <p><a href="contact.html">Contact Us</a></p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script> 
+
+  <script>
+const updateDateTime = () => {
+    document.getElementById('date-time').innerText = new Date().toLocaleString();
+};
+setInterval(updateDateTime, 10);
+
+function validateForm() {
+    let isValid = true;
+
+    const fullname = document.getElementById('Fullname').value;
+    const fullnameError = document.getElementById('Fullname-error');
+    if (fullname.trim() === '') {
+        isValid = false;
+        fullnameError.innerText = 'Enter your Fullname.';
+    } else {
+        fullnametrue.innerText = 'perfect';
+    }
+
+    const age = document.getElementById('age').value;
+    const ageError = document.getElementById('age-error');
+    if (age < 18) {
+        isValid = false;
+        ageError.innerText = 'You must be at least 18 years old.';
+    } else {
+        ageError.innerText = '';
+    }
+
+    const goals = document.querySelectorAll('input[name="goals"]:checked');
+    const goalsError = document.getElementById('goalsError');
+    if (goals.length < 2) {
+        isValid = false;
+        goalsError.innerText = 'Please select at least two learning goals.';
+    } else {
+        goalsError.innerText = '';
+    }
+
+
+    const gender = document.querySelectorAll('input[name="gender"]:checked');
+    const genderError = document.getElementById('gender-error');
+    if (gender.length === 0) {
+        isValid = false;
+        genderError.innerText = 'Please select your gender.';
+    } else {
+        genderError.innerText = ''; 
+    }
+
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirm-password').value;
+    const passwordError = document.getElementById('password-error');
+    const confirmPasswordError = document.getElementById('confirm-password-error');
+
+    passwordError.innerText = '';
+    confirmPasswordError.innerText = '';
+
+    if (password !== confirmPassword) {
+        isValid = false;
+        passwordError.innerText = 'Passwords do not match!';
+        confirmPasswordError.innerText = 'Passwords do not match!';
+    } else if (password.length < 8) {
+        isValid = false;
+        passwordError.innerText = 'Password must be at least 8 characters long.';
+    } else {
+        passwordError.innerText = '';
+        confirmPasswordError.innerText = ''; 
+    }
+
+    if (!isValid) {
+        event.preventDefault();
+    } else {
+        alert('Form submitted successfully!');
+    }
+}
+
+
+document.getElementById('myForm').addEventListener('submit', function(event) {
+    validateForm(event);  
+});
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Success Stories - Learn Programming Languages</title>
+  <link rel="stylesheet" href="css/styles.css"> 
+ <style>
+  .testimonials {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .testimonial-card {
+    flex: 1 1 calc(33% - 20px);
+    margin: 10px;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  .testimonial-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  .testimonial-card h3 {
+    margin-top: 10px;
+    color: #4CAF50;
+  }
+  .testimonial-card p {
+    font-size: 14px;
+    color: #555;
+  }
+ </style>
+</head>
+<body>
+
+  <header>
+    <h1>Success Stories</h1>
+    <div> 
+      <p id="date-time" class="text-end text-muted"></p> 
+  </div> 
+    <nav>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="courses.html">Courses</a>
+        <a href="resources.html">Resources</a>
+        <a href="success.html">Success</a>
+      </div>
+    </nav>
+  </header>
+
+  
+  <div class="container">
+    <section>
+      <h2>Our Students' Success Stories</h2>
+      <p>Read how our programming courses have helped students from all backgrounds achieve their goals and transform their careers.</p>
+    </section>
+
+    <section>
+      <div class="testimonials">
+     
+        <div class="testimonial-card">
+          <h3>Elvis Chidera</h3>
+          <p>"The Python course was a game changer for me. I started as a complete beginner and now I’m building my own web applications. I’m building my own web applications. The hands-on projects really helped me gain confidence in The hands-on projects really helped me gain confidence in coding!"</p>
+        </div>
+
+        
+        <div class="testimonial-card">
+          <h3>shaher siouri</h3>
+          <p>As a teenager, Elvis Chidera taught himself programming without access to a computer, relying instead on his feature phone. He started learning HTML and CSS through free online resources like W3Schools. Through dedication and practice, he built real-world apps and eventually secured a position at an MIT startup, proving that perseverance and creativity can lead to success in programming</p>
+        </div>
+
+       
+        <div class="testimonial-card">
+          <h3>Ken Rogers</h3>
+          <p>"Ken worked as a landscaper while self-studying web development. He learned technologies like PHP and Laravel in his spare time and eventually requested informational interviews with web development companies. His determination paid off when one of these companies offered him a full-time developer role. Ken emphasizes the importance of building real-world projects to demonstrate skillsThe HTML and CSS course helped me design beautiful websites. I never thought I could do it before, but now I’m building websites for clients. Great course!"</p>
+        </div>
+
+      
+        <div class="testimonial-card">
+          <h3>Danil Suetin</h3>
+          <p>"This program gave me the foundation I needed to switch careers into web development. worked as a landscaper while self-studying web development. He learned technologies  and Laravel in his spare time and eventually requested informational interviews with web development companies. His determination paid off when one of these companies offered him a full-time developer role. Ken emphasizes the importance of building real-world projects to demonstrate skills I now work as a junior developer, thanks to the excellent course structure and support!"</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+  <footer>
+    <p><a href="singin.html" target="_blank">sing in</a></p>
+    <p><a href="contact.html">Contact Us</a></p>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script> 
+
+  <script>
+     const updateDateTime = () => { 
+        document.getElementById('date-time').innerText = new Date().toLocaleString(); 
+    }; 
+    setInterval(updateDateTime, 10); 
+  </script>
+</body>
+</html>

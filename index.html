@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learn Programming Languages</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .hero {
+        background: url('img/hero.jpg') no-repeat center center/cover;
+        height: 400px;
+        color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+.hero h1 {
+        font-size: 3em;
+        margin: 0;
+      }
+.hero p {
+        font-size: 1.2em;
+      }
+.hero button {
+        padding: 10px 20px;
+        font-size: 1em;
+        background: #fff;
+        color: #4CAF50;
+        border: none;
+        cursor: pointer;
+        margin-top: 20px;
+      }
+.hero button:hover {
+        background: #4CAF50;
+        color: #fff;
+      }
+  </style>
+</head>
+<body style=" background: #4e865c;">
+
+  <header>
+    <h1>Learn Programming Languages</h1>
+    <div> 
+      <p id="date-time" class="text-end text-muted"></p> 
+  </div> 
+    <nav>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="courses.html">Courses</a>
+        <a href="resources.html">Resources</a>
+        <a href="success.html">Success</a>
+      </div>
+    </nav>
+  </header>
+
+ 
+  <section  class="hero">
+    <h1>Master Programming Languages</h1>
+    <p>Empower your future with our structured and engaging courses.</p>
+    <p>By learning languages like Python, JavaScript, Java, and html, you gain the skills to communicate with machines, automate tasks, and innovate across industries. Whether you’re a beginner or aiming to enhance your expertise, programming languages open doors to a wealth of opportunities in tech careers, entrepreneurship, and beyond.</p>
+    <button onclick="window.location.href='courses.html'">Explore Courses</button>
+    <button onclick="window.location.href='singin.html'">Sing in</button>
+  </section>
+  <section style="padding: 20px; background-color:#4e865c;">
+    <h2 style="text-align: center; color: #92cf94;">Why Choose Us?</h2>
+    <div class="features">
+      <div>
+        <h3>Beginner-Friendly</h3>
+        <p>Our courses are designed for learners with no prior experience.</p>
+      </div>
+      <div>
+        <h3>Expert Instructors</h3>
+        <p>Learn from industry professionals with years of experience.</p>
+      </div>
+      <div>
+        <h3>Interactive Content</h3>
+        <p>Practice coding directly in your browser with real-time feedback.</p>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <p><a href="singin.html" target="_blank">sing in</a></p>
+    <p><a href="contact.html">Contact Us</a></p>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script> 
+
+  <script>
+     const updateDateTime = () => { 
+        document.getElementById('date-time').innerText = new Date().toLocaleString(); 
+    }; 
+    setInterval(updateDateTime, 10); 
+  </script>
+</body>
+</html>

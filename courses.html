@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Courses - Learn Programming Languages</title>
+  <link rel="stylesheet" href="css/styles.css"> 
+ <style>
+  .courses {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .course-card {
+    flex: 1 1 calc(33% - 20px);
+    margin: 10px;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  .course-card img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  .course-card h3 {
+    margin-top: 10px;
+    color: #4CAF50;
+  }
+  .course-card p {
+    font-size: 14px;
+    color: #555;
+  }
+  .course-card button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background: #4CAF50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  .course-card button:hover {
+    background: #45a049;
+  }
+ </style>
+</head>
+<body>
+  
+  <header>
+    <h1>Our Courses</h1>
+    <div> 
+      <p id="date-time" class="text-end text-muted"></p> 
+  </div> 
+    <nav>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="courses.html">Courses</a>
+        <a href="resources.html">Resources</a>
+        <a href="success.html">Success</a>
+      </div>
+    </nav>
+  </header>
+
+  
+  <div class="container">
+    <section>
+      <h2>Explore Our Courses</h2>
+      <p>We offer a wide range of programming courses to suit all levels, from beginners to advanced learners. Select the course that best fits your learning goals and start your journey to becoming a programming expert!</p>
+    </section>
+
+    <section>
+      <div class="courses">
+       
+        <div class="course-card">
+          <img style="max-width: 25%;" src="img/pythonpic.png" alt="Python Course">
+          <h3>Python for Beginners</h3>
+          <p>Learn Python from scratch! This course covers basic concepts like variables, loops, and functions, as well as hands-on projects to solidify your learning.</p>
+          <button onclick="window.location.href='https://www.youtube.com/watch?v=h3VCQjyaLws&list=PLuXY3ddo_8nzrO74UeZQVZOb5-wIS6krJ'">Learn More</button>
+        </div>
+
+        
+        <div class="course-card">
+          <img style="max-width: 25%;" src="img/javascript.png" alt="JavaScript Course">
+          <h3>JavaScript Essentials</h3>
+          <p>Master JavaScript, the language of the web. Explore core concepts, DOM manipulation, and build interactive websites with ease.</p>
+          <button onclick="window.location.href='https://www.youtube.com/watch?v=PWuTLTFMtYw&list=PLknwEmKsW8OuTqUDaFRBiAViDZ5uI3VcE'">Learn More</button>
+        </div>
+
+        
+        <div class="course-card">
+          <img style="max-width: 45%;" src="img/html css.png" alt="HTML and CSS Course">
+          <h3>HTML & CSS Fundamentals</h3>
+          <p>Design stunning web pages with HTML and CSS. Learn how to structure content, apply styles, and make your website responsive.</p>
+          <button onclick="window.location.href='https://www.youtube.com/watch?v=Dv39fDYei9A&list=PLknwEmKsW8OuN04Odt2sJqt4aAnkp-iYA&index=1'">Learn More</button>
+        </div>
+
+       
+        <div class="course-card">
+          <img style="max-width: 25%;" src="img/java.png" alt="Java Course">
+          <h3>Introduction to Java</h3>
+          <p>Start your journey into Java programming. Learn object-oriented programming, build applications, and understand Java basics.</p>
+          <button onclick="window.location.href='https://www.youtube.com/watch?v=mNvJipMTKSM&list=PLCInYL3l2AajYlZGzU_LVrHdoouf8W6ZN'">Learn More</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  
+    <section>
+      <form class="contact-form" id="signUpForm" onsubmit="calculationForm(event)">
+        <h2>Calculate your avg</h2>
+    
+        <label for="Fullname">Name</label>
+        <br>
+        <input type="text" id="Fullname" name="Fullname" placeholder="Enter your name">
+        <span id="Fullname-error" style="color: red;"></span>
+        <br><br>
+    
+        <div>
+          <label>Location (Inside or Outside Jordan):</label><br>
+          <input type="radio" id="Inside" name="Location" value="Inside">
+          <label for="Inside">Inside Jordan</label>
+          <input type="radio" id="Outside" name="Location" value="Outside">
+          <label for="Outside">Outside Jordan</label>
+        </div>
+        <span id="Location-error" style="color: red;"></span>
+        <br><br>
+    
+        <div id="check1">
+          <label for="Difficulty">Course Difficulty:</label>
+          <br>
+          <input type="checkbox" id="easy" name="Difficulty" value="Easy">
+          <label for="easy">Easy</label>
+          <br>
+    
+          <input type="checkbox" id="medium" name="Difficulty" value="Medium">
+          <label for="medium">Medium</label>
+          <br>
+    
+          <input type="checkbox" id="hard" name="Difficulty" value="Hard">
+          <label for="hard">Hard</label>
+          <br><br>
+    
+          <span id="DifficultyError" style="color: red;"></span>
+        </div>
+    
+        <div>
+          <label for="html">HTML (0-100):</label>
+          <input type="number" id="html" name="html" max="100" min="0">
+          <span id="htmlError" class="error"></span>
+        </div>
+    
+        <div>
+          <label for="C++">C++ (0-100):</label>
+          <input type="number" id="C++" name="C++" max="100" min="0">
+          <span id="C++Error" class="error"></span>
+        </div>
+    
+        <div>
+          <label for="java">Java (0-100):</label>
+          <input type="number" id="java" name="java" max="100" min="0">
+          <span id="javaError" class="error"></span>
+        </div>
+    
+        <div>
+          <label for="script">Script (0-100):</label>
+          <input type="number" id="script" name="script" max="100" min="0">
+          <span id="scriptError" class="error"></span>
+        </div>
+    
+        <button type="submit">Calculate</button>
+      </form>
+    
+      <h3>Report:</h3>
+      <textarea id="reportArea" rows="10" cols="50" readonly></textarea>
+    </section>
+
+ 
+  <footer>
+    <p><a href="singin.html" target="_blank">sing in</a></p>
+    <p><a href="contact.html">Contact Us</a></p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script> 
+
+  <script>
+     const updateDateTime = () => { 
+        document.getElementById('date-time').innerText = new Date().toLocaleString(); 
+    }; 
+    setInterval(updateDateTime, 10); 
+
+    function calculationForm(event) {
+    event.preventDefault(); 
+  
+    let isValid = true;
+    let report = ''; 
+  
+    const fullname = document.getElementById('Fullname').value.trim();
+    const fullnameError = document.getElementById('Fullname-error');
+    const fullnameInput = document.getElementById('Fullname');
+    if (fullname === '') {
+      isValid = false;
+      fullnameError.innerText = 'Enter your Fullname.';
+      fullnameInput.classList.add('error');
+      fullnameInput.classList.remove('valid');
+    } else {
+      fullnameError.innerText = '';
+      fullnameInput.classList.add('valid');
+      fullnameInput.classList.remove('error');
+      report += `Name: ${fullname}\n`;
+    }
+  
+    const location = document.querySelectorAll('input[name="Location"]:checked');
+    const locationError = document.getElementById('Location-error');
+    if (location.length === 0) {
+      isValid = false;
+      locationError.innerText = 'Please select your location.';
+    } else {
+      locationError.innerText = '';
+      report += `Location: ${location[0].value}\n`;
+    }
+  
+    const difficulty = document.querySelectorAll('input[name="Difficulty"]:checked');
+    const difficultyError = document.getElementById('DifficultyError');
+    if (difficulty.length === 0) {
+      isValid = false;
+      difficultyError.innerText = 'Please select at least one difficulty level.';
+    } else {
+      difficultyError.innerText = '';
+      report += `Course Difficulty: ${Array.from(difficulty).map(d => d.value).join(', ')}\n`;
+    }
+  
+    const courses = ['html', 'C++', 'java', 'script'];
+    let totalMarks = 0;
+    let validCourses = 0;
+    courses.forEach(course => {
+      const marks = parseInt(document.getElementById(course).value);
+      const courseError = document.getElementById(course + 'Error');
+      const courseInput = document.getElementById(course);
+  
+      if (isNaN(marks) || marks < 0 || marks > 100) {
+        isValid = false;
+        courseError.innerText = `Please enter a valid mark between 0 and 100 for ${course.toUpperCase()}.`;
+        courseInput.classList.add('error');
+        courseInput.classList.remove('valid');
+      } else {
+        courseError.innerText = '';
+        courseInput.classList.add('valid');
+        courseInput.classList.remove('error');
+        validCourses++;
+        totalMarks += marks;
+        report += `${course.toUpperCase()}: ${marks}\n`;
+      }
+    });
+  
+    let averageMarks = validCourses > 0 ? (totalMarks / validCourses).toFixed(2) : 0;
+    report += `Average Marks: ${averageMarks}\n`;
+  
+    if (isValid) {
+      document.getElementById('reportArea').value = report;
+    } else {
+      document.getElementById('reportArea').value = ''; 
+    }
+  }
+  
+  
+  </script>
+</body>
+</html>
